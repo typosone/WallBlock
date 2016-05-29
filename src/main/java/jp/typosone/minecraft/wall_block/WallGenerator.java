@@ -95,7 +95,7 @@ public class WallGenerator extends Block {
         clearWall(x, y, z, meta);
     }
 
-    protected void generateWall(int x, int y, int z, int meta) {
+    private void generateWall(int x, int y, int z, int meta) {
         World world = Minecraft.getMinecraft().theWorld;
         if (meta == 1 || meta == 3) {
             for (int dz = -1; dz < 2; dz++) {
@@ -103,7 +103,6 @@ public class WallGenerator extends Block {
                     world.setBlock(x, y + dy, z + dz, WallBlockCore.wall);
                     ((WallTileEntity) world.getTileEntity(x, y + dy, z + dz))
                             .setGeneratorCoords(x, y, z);
-
                 }
             }
             return;
@@ -117,7 +116,7 @@ public class WallGenerator extends Block {
         }
     }
 
-    protected void clearWall(int x, int y, int z, int meta) {
+    private void clearWall(int x, int y, int z, int meta) {
         World world = Minecraft.getMinecraft().theWorld;
         if (meta == 1 || meta == 3) {
             for (int dz = -1; dz < 2; dz++) {

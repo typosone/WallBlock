@@ -37,6 +37,11 @@ public class WallBlock extends BlockContainer {
     }
 
     @Override
+    public void onNeighborBlockChange(World world, int x, int y, int z, Block block) {
+
+    }
+
+    @Override
     public TileEntity createNewTileEntity(World world, int p_149915_2_) {
         return new WallTileEntity();
     }
